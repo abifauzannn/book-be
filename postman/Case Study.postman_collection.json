@@ -1,0 +1,2075 @@
+{
+	"info": {
+		"_postman_id": "aefd5d7d-5584-4eb7-b4e0-c77a365c982b",
+		"name": "Case Study",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42751484"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"123456\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/login/"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"123456\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/login/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:46:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 3600\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg1OTAxLCJleHAiOjE3NjI4ODk1MDEsIm5iZiI6MTc2Mjg4NTkwMSwianRpIjoid3JPY1pHVDQzcndpUzhXTSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.CUSg8yh_iC2-8INnMZ8ENqKuNYfvplkFC0kw-tyzocY"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/me"
+					},
+					"response": [
+						{
+							"name": "Get User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/me"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:31:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Test User\",\n        \"email\": \"test@example.com\",\n        \"email_verified_at\": \"2025-11-11T18:29:41.000000Z\",\n        \"created_at\": \"2025-11-11T18:29:42.000000Z\",\n        \"updated_at\": \"2025-11-11T18:29:42.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODc5MTA4LCJleHAiOjE3NjI4ODI3MDgsIm5iZiI6MTc2Mjg3OTEwOCwianRpIjoiMndyakpzWVJ1VndLcFZ0cCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ij6RK3TXb5DEdfSlJUP8K2_XgCIjtlkJDcCkbEp471o"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/logout"
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:32:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully logged out\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODc5MTA4LCJleHAiOjE3NjI4ODI3MDgsIm5iZiI6MTc2Mjg3OTEwOCwianRpIjoiMndyakpzWVJ1VndLcFZ0cCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ij6RK3TXb5DEdfSlJUP8K2_XgCIjtlkJDcCkbEp471o"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/register"
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/register"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:33:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Admin\",\n            \"email\": \"admin@gmail.com\",\n            \"updated_at\": \"2025-11-11T18:33:17.000000Z\",\n            \"created_at\": \"2025-11-11T18:33:17.000000Z\",\n            \"id\": 2\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYyODg1OTk3LCJleHAiOjE3NjI4ODk1OTcsIm5iZiI6MTc2Mjg4NTk5NywianRpIjoiSW5QNFR4Q01TbkJyUXYyayIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.wrn0AsIlMJPVFN90Hasr_bEZwiS0UGYf-Kyr2H0q1pY\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Publisher",
+			"item": [
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODgyNDUwLCJleHAiOjE3NjI4ODYwNTAsIm5iZiI6MTc2Mjg4MjQ1MCwianRpIjoiSmV5TE52NXlHREVPaFpISyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.-JIXaluYEWGaLnyTPHHL66Ss9Cjo9Zy6YakAr4Fbbgs"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/publisher"
+					},
+					"response": [
+						{
+							"name": "Get",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/publisher"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:33:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Publishers retrieved successfully\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 5,\n                \"name\": \"Bukune\",\n                \"address\": \"Jl. Raya Bogor No.25, Depok\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Pustaka Pelajar\",\n                \"address\": \"Jl. Diponegoro No.15, Yogyakarta\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Mizan\",\n                \"address\": \"Jl. Asia Afrika No.88, Bandung\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Erlangga\",\n                \"address\": \"Jl. Mangga Dua No.10, Jakarta\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Gramedia\",\n                \"address\": \"Jl. Sudirman No.1, Jakarta\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/publisher?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/publisher?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/publisher?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/publisher\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Filtering & Sorting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYyODg1OTk3LCJleHAiOjE3NjI4ODk1OTcsIm5iZiI6MTc2Mjg4NTk5NywianRpIjoiSW5QNFR4Q01TbkJyUXYyayIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.wrn0AsIlMJPVFN90Hasr_bEZwiS0UGYf-Kyr2H0q1pY"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/publisher?name=Gramedia&sort_by=name&sort_order=asc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"publisher"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Gramedia"
+								},
+								{
+									"key": "sort_by",
+									"value": "name"
+								},
+								{
+									"key": "sort_order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/publisher?name=Gramedia&sort_by=name&sort_order=asc",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"publisher"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Gramedia"
+										},
+										{
+											"key": "sort_by",
+											"value": "name"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:34:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Publishers retrieved successfully\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Gramedia\",\n                \"address\": \"Jl. Sudirman No.1, Jakarta\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/publisher?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/publisher?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/publisher?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/publisher\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODgxNDU2LCJleHAiOjE3NjI4ODUwNTYsIm5iZiI6MTc2Mjg4MTQ1NiwianRpIjoiUkJQYmFxcjVxRTAxd1NaaCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Ld0huR-eJfPlhmAg1ikxc5p-ioVwMjGWfoNsXPpUbLA"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/publisher"
+					},
+					"response": [
+						{
+							"name": "Get Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/publisher/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:34:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Publisher retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Gramedia\",\n        \"address\": \"Jl. Sudirman No.1, Jakarta\",\n        \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n        \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYyODg1OTk3LCJleHAiOjE3NjI4ODk1OTcsIm5iZiI6MTc2Mjg4NTk5NywianRpIjoiSW5QNFR4Q01TbkJyUXYyayIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.wrn0AsIlMJPVFN90Hasr_bEZwiS0UGYf-Kyr2H0q1pY"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Thursina\",\r\n    \"address\" : \"Komplek megabrata no 50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/publisher"
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Thursina\",\r\n    \"address\" : \"Komplek megabrata no 50\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/publisher"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:35:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Publisher created successfully\",\n    \"data\": {\n        \"name\": \"Thursina\",\n        \"address\": \"Komplek megabrata no 50\",\n        \"updated_at\": \"2025-11-11T18:35:18.000000Z\",\n        \"created_at\": \"2025-11-11T18:35:18.000000Z\",\n        \"id\": 6\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYyODg1OTk3LCJleHAiOjE3NjI4ODk1OTcsIm5iZiI6MTc2Mjg4NTk5NywianRpIjoiSW5QNFR4Q01TbkJyUXYyayIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.wrn0AsIlMJPVFN90Hasr_bEZwiS0UGYf-Kyr2H0q1pY"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Gramedia Updated\",\r\n    \"address\": \"Komplek Margahayu Raya, Bandung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/publisher/1"
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Gramedia Updated\",\r\n    \"address\": \"Komplek Margahayu Raya, Bandung\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/publisher/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:35:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Publisher updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Gramedia Updated\",\n        \"address\": \"Komplek Margahayu Raya, Bandung\",\n        \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n        \"updated_at\": \"2025-11-11T18:35:45.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYyODg1OTk3LCJleHAiOjE3NjI4ODk1OTcsIm5iZiI6MTc2Mjg4NTk5NywianRpIjoiSW5QNFR4Q01TbkJyUXYyayIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.wrn0AsIlMJPVFN90Hasr_bEZwiS0UGYf-Kyr2H0q1pY"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/publisher/6"
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/publisher/6"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:36:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Publisher deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Show All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/publisher/all"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 12 Nov 2025 04:34:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"All authors retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Erlangga\",\n            \"address\": \"Jl. Mangga Dua No.10, Jakarta\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Mizan\",\n            \"address\": \"Jl. Asia Afrika No.88, Bandung\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Pustaka Pelajar\",\n            \"address\": \"Jl. Diponegoro No.15, Yogyakarta\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Bukunee\",\n            \"address\": \"Jl. Raya Bogor No.25, Depok\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-12T03:32:17.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Gramedia\",\n            \"address\": \"Jalan Martadinata No 10\",\n            \"created_at\": \"2025-11-12T03:32:39.000000Z\",\n            \"updated_at\": \"2025-11-12T03:32:39.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Thursina\",\n            \"address\": \"Komplek Margahayu Raya no 10\",\n            \"created_at\": \"2025-11-12T03:33:48.000000Z\",\n            \"updated_at\": \"2025-11-12T03:33:48.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/author"
+					},
+					"response": [
+						{
+							"name": "Get",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/author"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:46:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Authors retrieved successfully\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 3,\n                \"name\": \"Agatha Christie\",\n                \"bio\": \"Famous mystery writer.\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"George R.R. Martin\",\n                \"bio\": \"Author of A Song of Ice and Fire.\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"J.K. Rowling\",\n                \"bio\": \"Author of Harry Potter series.\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/author?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/author?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/author?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/author\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 3,\n        \"total\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Filtering & Sorting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/author?name=Rowling&sort_by=name&sort_order=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rowling"
+								},
+								{
+									"key": "sort_by",
+									"value": "name"
+								},
+								{
+									"key": "sort_order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filtering & Sorting",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/author?name=Rowling&sort_by=name&sort_order=asc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"author"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Rowling"
+										},
+										{
+											"key": "sort_by",
+											"value": "name"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:49:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Authors retrieved successfully\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"J.K. Rowling\",\n                \"bio\": \"Author of Harry Potter series.\",\n                \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n                \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/author?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/author?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/author?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/author\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/author/1"
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/author/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:51:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Author retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"J.K. Rowling\",\n        \"bio\": \"Author of Harry Potter series.\",\n        \"created_at\": \"2025-11-11T18:29:41.000000Z\",\n        \"updated_at\": \"2025-11-11T18:29:41.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Mohammad Abi Fauzan\",\r\n    \"bio\" : \"Pencipta Buku Matematika\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/author"
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Mohammad Abi Fauzan\",\r\n    \"bio\" : \"Pencipta Buku Matematika\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/author"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:54:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Author created successfully\",\n    \"data\": {\n        \"name\": \"Mohammad Abi Fauzan\",\n        \"bio\": \"Pencipta Buku Matematika\",\n        \"updated_at\": \"2025-11-11T18:54:44.000000Z\",\n        \"created_at\": \"2025-11-11T18:54:44.000000Z\",\n        \"id\": 4\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"mohammad abi\", \r\n    \"bio\" : \"pencipta buku bahasa inggris\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/author/4"
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"mohammad abi\", \r\n    \"bio\" : \"pencipta buku bahasa inggris\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/author/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:56:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Author updated successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"mohammad abi\",\n        \"bio\": \"pencipta buku bahasa inggris\",\n        \"created_at\": \"2025-11-11T18:54:44.000000Z\",\n        \"updated_at\": \"2025-11-11T18:56:44.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{base_url}}/author/4"
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{base_url}}/author/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:57:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Author deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Show All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/author/all"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 12 Nov 2025 04:31:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"All authors retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"J.K. Rowling\",\n            \"bio\": \"Author of Harry Potter series.\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"George R.R. Martin\",\n            \"bio\": \"Author of A Song of Ice and Fire.\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Agatha Christie\",\n            \"bio\": \"Famous mystery writer.\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/book"
+					},
+					"response": [
+						{
+							"name": "Get",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/book"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 19:22:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Books retrieved successfully\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 3,\n                \"title\": \"Murder on the Orient Express\",\n                \"description\": \"Famous mystery novel by Agatha Christie.\",\n                \"author_id\": 3,\n                \"publisher_id\": 3,\n                \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"updated_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"author\": {\n                    \"id\": 3,\n                    \"name\": \"Agatha Christie\",\n                    \"bio\": \"Famous mystery writer.\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                },\n                \"publisher\": {\n                    \"id\": 3,\n                    \"name\": \"Mizan\",\n                    \"address\": \"Jl. Asia Afrika No.88, Bandung\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"title\": \"A Game of Thrones\",\n                \"description\": \"First book in A Song of Ice and Fire series.\",\n                \"author_id\": 2,\n                \"publisher_id\": 2,\n                \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"updated_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"author\": {\n                    \"id\": 2,\n                    \"name\": \"George R.R. Martin\",\n                    \"bio\": \"Author of A Song of Ice and Fire.\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                },\n                \"publisher\": {\n                    \"id\": 2,\n                    \"name\": \"Erlangga\",\n                    \"address\": \"Jl. Mangga Dua No.10, Jakarta\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                }\n            },\n            {\n                \"id\": 1,\n                \"title\": \"Harry Potter and the Sorcerer's Stone\",\n                \"description\": \"First book in the Harry Potter series.\",\n                \"author_id\": 1,\n                \"publisher_id\": 1,\n                \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"updated_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"author\": {\n                    \"id\": 1,\n                    \"name\": \"J.K. Rowling\",\n                    \"bio\": \"Author of Harry Potter series.\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                },\n                \"publisher\": {\n                    \"id\": 1,\n                    \"name\": \"Gramedia\",\n                    \"address\": \"Jl. Sudirman No.1, Jakarta\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                }\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/book?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/book?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/book?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/book\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 3,\n        \"total\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Filtering & Sorting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/book?title=Thrones&sort_by=created_at&sort_order=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Thrones"
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at"
+								},
+								{
+									"key": "sort_order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filtering & Sorting",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/book?title=Thrones&sort_by=created_at&sort_order=asc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "Thrones"
+										},
+										{
+											"key": "sort_by",
+											"value": "created_at"
+										},
+										{
+											"key": "sort_order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 19:27:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Books retrieved successfully\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 2,\n                \"title\": \"A Game of Thrones\",\n                \"description\": \"First book in A Song of Ice and Fire series.\",\n                \"author_id\": 2,\n                \"publisher_id\": 2,\n                \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"updated_at\": \"2025-11-11T19:17:28.000000Z\",\n                \"author\": {\n                    \"id\": 2,\n                    \"name\": \"George R.R. Martin\",\n                    \"bio\": \"Author of A Song of Ice and Fire.\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                },\n                \"publisher\": {\n                    \"id\": 2,\n                    \"name\": \"Erlangga\",\n                    \"address\": \"Jl. Mangga Dua No.10, Jakarta\",\n                    \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n                    \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n                }\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/book?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/book?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/book?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/book\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODkxMzA1LCJleHAiOjE3NjI4OTQ5MDUsIm5iZiI6MTc2Mjg5MTMwNSwianRpIjoiUU9jTEN1T0t3bm14NE0yViIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LIqGCJCkgjj_baIH8UtdXeC6V1BB73KFSqyJzdupX_I"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/book/1"
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/book/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 20:02:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Harry Potter and the Sorcerer's Stone\",\n        \"description\": \"First book in the Harry Potter series.\",\n        \"author_id\": 1,\n        \"publisher_id\": 1,\n        \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n        \"updated_at\": \"2025-11-11T19:17:28.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"J.K. Rowling\",\n            \"bio\": \"Author of Harry Potter series.\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        \"publisher\": {\n            \"id\": 1,\n            \"name\": \"Gramedia\",\n            \"address\": \"Jl. Sudirman No.1, Jakarta\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sebuah Seni untuk Bersikap Bodo Amat\",\r\n    \"author_id\": 1,\r\n    \"publisher_id\": 3,\r\n    \"description\" : \"Sebuah Seni untuk Bersikap Bodo Amat adalah buku pertama karya Mark Manson\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/book"
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Sebuah Seni untuk Bersikap Bodo Amat\",\r\n    \"author_id\": 1,\r\n    \"publisher_id\": 3,\r\n    \"description\" : \"Sebuah Seni untuk Bersikap Bodo Amat adalah buku pertama karya Mark Manson\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/book"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 19:35:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"title\": \"Sebuah Seni untuk Bersikap Bodo Amat\",\n        \"author_id\": 1,\n        \"publisher_id\": 3,\n        \"description\": \"Sebuah Seni untuk Bersikap Bodo Amat adalah buku pertama karya Mark Manson\",\n        \"updated_at\": \"2025-11-11T19:35:09.000000Z\",\n        \"created_at\": \"2025-11-11T19:35:09.000000Z\",\n        \"id\": 5,\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"J.K. Rowling\",\n            \"bio\": \"Author of Harry Potter series.\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        \"publisher\": {\n            \"id\": 3,\n            \"name\": \"Mizan\",\n            \"address\": \"Jl. Asia Afrika No.88, Bandung\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Sebuah Seni\",\r\n    \"author_id\": 3,\r\n    \"publisher_id\": 1,\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/book/5"
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\" : \"Sebuah Seni\",\r\n    \"author_id\": 3,\r\n    \"publisher_id\": 1,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/book/5"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 19:39:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book updated successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"title\": \"Sebuah Seni\",\n        \"description\": \"Sebuah Seni untuk Bersikap Bodo Amat adalah buku pertama karya Mark Manson\",\n        \"author_id\": 1,\n        \"publisher_id\": 3,\n        \"created_at\": \"2025-11-11T19:35:09.000000Z\",\n        \"updated_at\": \"2025-11-11T19:39:05.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"J.K. Rowling\",\n            \"bio\": \"Author of Harry Potter series.\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        },\n        \"publisher\": {\n            \"id\": 3,\n            \"name\": \"Mizan\",\n            \"address\": \"Jl. Asia Afrika No.88, Bandung\",\n            \"created_at\": \"2025-11-11T19:17:28.000000Z\",\n            \"updated_at\": \"2025-11-11T19:17:28.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYyODg2Nzk1LCJleHAiOjE3NjI4OTAzOTUsIm5iZiI6MTc2Mjg4Njc5NSwianRpIjoiRjJOVGw2T1d1cFRDRGRoMCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.f0CNueatJzbEoNl-6joEbxqhsGiq6_9wUvYkJdbltK8"
+							}
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{base_url}}/book/5"
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{base_url}}/book/5"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 19:41:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
