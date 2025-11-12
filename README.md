@@ -40,3 +40,7 @@ php artisan db:seed
 ### 9️⃣ Start the Development Server
 
 php artisan serve
+
+### 💡 Dokumentasi API Postman:
+
+https://documenter.getpostman.com/view/42751484/2sB3WttKNc#8e380492-fbbc-458d-bc0d-ccd3b37e7192
